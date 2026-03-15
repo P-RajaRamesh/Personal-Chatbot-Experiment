@@ -1,0 +1,25 @@
+langgraph
+langchain
+langchain-groq
+ipykernel
+python-dotenv
+langchain-google-genai
+streamlit
+langgraph-checkpoint-sqlite
+langchain-community
+ddgs
+langchain-mcp-adapters
+langchain-text-splitters
+faiss-cpu
+pypdf
+langchain-huggingface
+sentence-transformers
+fastapi
+sqlalchemy
+uvicorn
+pydantic
+passlib
+# bcrypt==4.3.0
+bcrypt==4.0.1
+python-jose
+python-multipart
