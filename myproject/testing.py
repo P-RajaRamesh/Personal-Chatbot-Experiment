@@ -107,14 +107,21 @@ import requests
 
 
 
-def login(username,password):
-    url = 'http://127.0.0.1:8000/login'
-    payload= {"username": username, "password": password}
-    response = requests.post(url=url,data=payload)
-    if response.status_code == 200:
-        return response.json()['access_token']
-    else:
-        return None
+# def login(username,password):
+#     url = 'http://127.0.0.1:8000/login'
+#     payload= {"username": username, "password": password}
+#     response = requests.post(url=url,data=payload)
+#     if response.status_code == 200:
+#         return response.json()['access_token']
+#     else:
+#         return None
     
 
-print("printing----",login('raja','raja@123'))
+# print("printing----",login('raja','raja@123'))
+
+# getting folder name
+from pathlib import Path
+full_path = Path(__file__).resolve()
+folder_name = Path(full_path).parent.name
+print('fullpath: ',full_path)
+print('foldername: ',folder_name)

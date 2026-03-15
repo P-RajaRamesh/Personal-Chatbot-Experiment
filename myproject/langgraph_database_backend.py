@@ -6,10 +6,14 @@ from langgraph.checkpoint.sqlite import SqliteSaver
 import sqlite3
 
 from langchain_groq import ChatGroq
+from pathlib import Path
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+full_path = Path(__file__).resolve()
+folder_name = Path(full_path).parent.name
 
 groq_api_key=os.getenv("GROQ_API_KEY")
 
@@ -31,7 +35,7 @@ def chat_node(state: ChatState) -> ChatState:
     return {'messages': [response]}
 
 # connection
-conn=sqlite3.connect(database='./myproject/dbfiles/chatbot.db', check_same_thread=False)
+conn=sqlite3.connect(database=f'./{folder_name}/dbfiles/chatbot.db', check_same_thread=False)
 
 # Checkpoint
 checkpointer=SqliteSaver(conn=conn)
